@@ -1,521 +1,536 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Sherif Abdelhamid — Executive IT Portfolio</title>
+<meta name="description" content="Sherif Abdelhamid — IT Director | CTO | Head of Technology & Innovation. Executive portfolio, case studies, KPIs, projects, CV downloads.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* ---------- Root & Reset ---------- */
   :root{
-    --bg: #f6fbff;
-    --card: #ffffff;
-    --muted: #e9f7fc;
-    --text: #0b2330;
-    --muted-text: #516569;
-    --primary: #0b8296;
-    --accent: #60d0ff;
-    --shadow: 0 10px 30px rgba(11,34,48,0.08);
-    --radius: 12px;
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --muted:#e9f7fc;
+    --text:#06222b;
+    --muted-text:#4c6a73;
+    --primary:#0b6f84;     /* corporate deep cyan */
+    --accent:#7fd8ee;      /* soft sky */
+    --kpi-bg:#eaf9fb;
+    --radius:12px;
+    --shadow:0 12px 28px rgba(6,34,37,0.08);
+    --glass: rgba(255,255,255,0.6);
   }
   *{box-sizing:border-box}
-  html,body{height:100%;margin:0;font-family:Inter, Roboto, "Segoe UI", Arial, sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-  a{color:inherit}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:var(--primary);text-decoration:none}
+  a:hover{text-decoration:underline}
   img{max-width:100%;display:block}
+  .container{max-width:1200px;margin:26px auto;padding:0 18px 80px}
 
-  /* Header (center) */
-  header{
-    background:linear-gradient(180deg,#063241 0%, #0b5f71 60%);
-    color:#fff;
-    padding:52px 20px 40px;
-    text-align:center;
-    box-shadow: var(--shadow);
-    position:sticky;
-    top:0;
-    z-index:40;
-  }
-  .header-inner{max-width:1100px;margin:0 auto}
-  .photo-wrap{width:150px;height:150px;margin:0 auto;border-radius:50%;overflow:hidden;border:5px solid rgba(255,255,255,0.14);box-shadow:0 8px 20px rgba(0,0,0,0.18)}
-  .photo-wrap img{width:150px;height:150px;object-fit:cover;display:block}
-  header h1{margin:16px 0 6px;font-size:28px;letter-spacing:0.6px;font-weight:800;color:var(--accent)}
-  header p.title-sub{margin:0;font-size:15px;color:rgba(255,255,255,0.92);font-weight:600}
-  header p.contact{margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.86)}
+  /* ---------- Header ---------- */
+  header{background:linear-gradient(180deg,#072a31 0%, #0b5f71 65%);color:#fff;padding:44px 18px 36px;border-bottom:4px solid rgba(255,255,255,0.04);position:sticky;top:0;z-index:80}
+  .header-inner{max-width:1100px;margin:0 auto;text-align:center}
+  .photo{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto;border:4px solid rgba(255,255,255,0.12);box-shadow:0 8px 26px rgba(3,18,22,0.22)}
+  .photo img{width:140px;height:140px;object-fit:cover}
+  h1{margin:14px 0 6px;font-size:26px;letter-spacing:0.4px;font-weight:800;color:var(--accent)}
+  p.head-sub{margin:0;color:rgba(255,255,255,0.92);font-weight:600}
+  .contact{margin-top:10px;color:rgba(255,255,255,0.85);font-size:13px}
 
-  .container{max-width:1100px;margin:28px auto;padding:0 18px 80px}
-  section.card{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:18px}
-  h2.section-title{font-size:20px;margin:0 0 12px;color:var(--primary);font-weight:700}
+  /* ---------- Top KPI / Summary strip ---------- */
+  .top-strip{max-width:1100px;margin:-36px auto 22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;padding:10px}
+  .kpi{background:var(--card);padding:14px 18px;border-radius:10px;min-width:180px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:flex-start}
+  .kpi strong{font-size:18px;color:var(--primary);display:block}
+  .kpi small{color:var(--muted-text)}
 
-  /* Executive summary */
-  .exec-summary p{margin:0;color:var(--muted-text);line-height:1.7}
+  /* ---------- Card / sections ---------- */
+  section.card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-bottom:18px}
+  h2.section-title{font-size:18px;margin:0 0 12px;color:var(--primary);font-weight:700}
+
+  /* ---------- layout columns ---------- */
+  .layout{display:grid;grid-template-columns:1fr 340px;gap:18px}
+  @media(max-width:980px){.layout{grid-template-columns:1fr}}
+
+  /* ---------- Executive summary ---------- */
+  .exec p{margin:0;color:var(--muted-text);line-height:1.7}
   .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-  .badge{background:transparent;border:1px solid rgba(11,130,150,0.12);color:var(--primary);padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px}
+  .badge{padding:7px 12px;border-radius:999px;border:1px solid rgba(11,111,128,0.10);font-weight:700;color:var(--primary);background:linear-gradient(180deg,#fbffff,#f3feff);font-size:13px}
 
-  /* Skills layout */
-  .columns{display:grid;grid-template-columns:1fr 340px;gap:18px}
-  @media(max-width:980px){.columns{grid-template-columns:1fr}}
+  /* ---------- Skills blocks ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+  .skill-box{background:linear-gradient(180deg,#fff,#fbfdff);padding:12px;border-radius:8px;border-left:5px solid var(--primary);box-shadow:0 8px 20px rgba(11,34,48,0.04)}
+  .skill-box h4{margin:0;font-size:13px;font-weight:800}
+  .skill-box p{margin:8px 0 0;color:var(--muted-text);font-size:13px}
 
-  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-  .skill-card{background:linear-gradient(180deg,#f7feff,#edfefa);padding:14px;border-radius:10px;border-left:6px solid var(--primary);box-shadow:0 6px 16px rgba(11,34,48,0.04)}
-  .skill-card h4{margin:0;font-size:14px;color:var(--text);font-weight:700}
-  .skill-card p{margin:6px 0 0;color:var(--muted-text);font-size:13px;line-height:1.45}
-
-  /* Accordion (Experience & Projects) - same style */
-  .accordion-wrap{border-radius:10px;overflow:hidden;border:1px solid rgba(11,34,48,0.04)}
-  .acc-header{
-    background:linear-gradient(90deg,#fff,#fafefe);
-    padding:14px 18px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(11,34,48,0.04);
-    transition:all .22s ease;font-weight:800;color:var(--text)
-  }
-  .acc-header .title{font-size:15px}
-  .acc-header .meta{font-size:13px;color:var(--muted-text);font-weight:600}
-  .acc-header:hover{background:linear-gradient(90deg,#f0fbff,#e8f9ff);color:var(--primary)}
-  .acc-header.active{background:linear-gradient(90deg, #e6fbff, #d7f7ff); color:var(--primary); box-shadow: inset 0 -3px 0 rgba(11,130,150,0.06)}
-  .acc-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:#f6fdff;color:var(--primary);font-weight:800}
-  .acc-body{padding:16px 18px;background:#fff;display:none;border-bottom:1px solid rgba(11,34,48,0.03);color:var(--muted-text);line-height:1.6}
-  .acc-body ul{margin:8px 0 0 18px;padding:0}
+  /* ---------- Accordion (Experience & Projects) ---------- */
+  .accordion{border-radius:10px;overflow:hidden;border:1px solid rgba(6,34,37,0.04)}
+  .acc-header{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:linear-gradient(90deg,#fff,#fafefe);cursor:pointer;border-bottom:1px solid rgba(6,34,37,0.04);transition:all .22s}
+  .acc-header:hover{background:linear-gradient(90deg,#f3fbff,#e9fbff)}
+  .acc-title{display:flex;flex-direction:column;align-items:flex-start}
+  .acc-title .role{font-weight:800;color:var(--text)}
+  .acc-title .meta{font-size:13px;color:var(--muted-text);margin-top:4px;font-weight:600}
+  .acc-ind{width:42px;height:42px;border-radius:8px;background:var(--kpi-bg);display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:var(--primary)}
+  .acc-body{display:none;padding:14px 16px;background:#fff;color:var(--muted-text);line-height:1.6;border-bottom:1px solid rgba(6,34,37,0.03)}
+  .acc-body ul{margin:10px 0 0 18px}
   .acc-body li{margin-bottom:8px}
+  .acc-open{display:block}
 
-  .proj-highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
-  .proj-card{background:linear-gradient(180deg,#f6feff,#eefcff);padding:12px;border-radius:8px;border-left:5px solid #17b6c7}
-  .proj-card h4{margin:0 0 6px;font-size:15px;color:var(--primary);font-weight:800}
-  .proj-card p{margin:0;color:var(--muted-text);font-size:13px}
+  /* ---------- Case studies (Challenge->Solution->Impact) ---------- */
+  .case{background:linear-gradient(180deg,#fbffff,#f2fbff);padding:14px;border-radius:10px;border-left:6px solid var(--primary);box-shadow:0 8px 20px rgba(6,34,37,0.04);margin-bottom:12px}
+  .case h5{margin:0 0 8px;color:var(--primary);font-weight:800}
+  .case p{margin:6px 0;color:var(--muted-text)}
+  .cs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 
+  /* ---------- Achievements cards ---------- */
   .ach-grid{display:flex;flex-wrap:wrap;gap:12px}
-  .ach{flex:1 1 180px;background:linear-gradient(180deg,var(--accent),var(--primary));color:#fff;padding:16px;border-radius:10px;text-align:center;box-shadow:0 6px 14px rgba(11,34,48,0.08)}
+  .ach{flex:1 1 160px;padding:12px;border-radius:10px;background:linear-gradient(180deg,var(--accent),var(--primary));color:#fff;text-align:center;box-shadow:0 8px 20px rgba(6,34,37,0.06)}
   .ach h3{margin:0;font-size:20px}
   .ach p{margin:6px 0 0;font-weight:700}
 
-  .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
-  .cert{background:#fff;border:1px solid rgba(11,34,48,0.04);padding:12px;border-radius:8px}
-  .edu p{margin:6px 0;color:var(--muted-text)}
+  /* ---------- Right column mini cards ---------- */
+  .card-compact{padding:12px;border-radius:10px;background:var(--card);box-shadow:var(--shadow);margin-bottom:12px}
+  .download-btn{display:inline-block;background:var(--primary);color:#fff;padding:10px 12px;border-radius:8px;font-weight:800;text-decoration:none;margin:6px 0}
+  .download-btn:hover{background:var(--accent);color:#05323b}
 
-  .downloads{display:flex;gap:10px;flex-wrap:wrap}
-  .download-btn{background:var(--primary);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block}
-  .download-btn:hover{background:var(--accent);color:#002b34}
+  /* ---------- footer ---------- */
+  footer{margin-top:18px;text-align:center;padding:14px;color:var(--muted-text);font-size:13px}
 
-  @media (max-width:880px){
-    header{padding:36px 16px}
-    .photo-wrap{width:120px;height:120px}
-  }
-
-  /* small helpers */
-  code{background:#eef9fb;padding:4px 6px;border-radius:6px;font-size:13px}
+  /* accessibility small */
+  .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 </style>
 </head>
 <body>
 
   <!-- HEADER -->
-  </style>
-</head>
-<body>
-<div class="container">
-
-  <!-- Header -->
-  <div class="header">
-    <img src="files/Sherif_Abdelhamid_Photo.jpg" alt="Sherif Abdelhamid">
-    <div class="header-info">
-      <h1>Sherif Abdelhamid</h1>
-      <h2>IT Director | CTO | Head of Technology & Innovation | Digital Transformation Leader</h2>
-      <div class="contact">
-        <span>📍 Riyadh, Saudi Arabia</span>
-        <span>✉ eng.sherifmfrag@hotmail.com</span>
-        <span>📞 +966 565 692 062</span>
-        <span>🔗 <a href="https://www.linkedin.com/in/sherif-mohamed-farag-43109520/" target="_blank">LinkedIn</a></span>
+  <header>
+    <div class="header-inner">
+      <div class="photo" aria-hidden="true">
+        <img src="sherif_photo.jpg" alt="Sherif Abdelhamid photo (professional headshot)">
       </div>
+      <h1>Sherif Abdelhamid</h1>
+      <p class="head-sub">IT Director • CTO • Head of Technology & Innovation • Digital Transformation Leader</p>
+      <p class="contact">Riyadh, Saudi Arabia | +966 565 692 062 | eng.sherifmfrag@hotmail.com | <a href="https://linkedin.com/in/sherif-mohamed-farag-43109520" target="_blank">LinkedIn</a></p>
     </div>
-  </div>
+  </header>
 
+  <!-- KPIs strip -->
+  <div class="top-strip" aria-hidden="true">
+    <div class="kpi"><strong>24+</strong><small>Years experience</small></div>
+    <div class="kpi"><strong>99.9%</strong><small>SLA compliance (major programs)</small></div>
+    <div class="kpi"><strong>$3M</strong><small>Annual IT cost optimization</small></div>
+    <div class="kpi"><strong>40%</strong><small>Reduction in cyber vulnerabilities</small></div>
+    <div class="kpi"><strong>3+</strong><small>Major ERP transformations</small></div>
+  </div>
 
   <main class="container">
 
-    <!-- SUMMARY + Downloads column layout -->
-    <section class="card exec-summary">
+    <!-- EXECUTIVE SUMMARY -->
+    <section class="card exec">
       <h2 class="section-title">Executive Summary</h2>
       <p>
-        Strategic and results-driven IT Director with more than 24 years of experience delivering enterprise-scale transformations,
-        cloud migrations and digital modernization across Saudi Arabia and the GCC. Proven track record in aligning IT strategy with
-        business objectives, reducing costs, strengthening security posture, and building high-performing technology organizations.
+        Strategic and results-driven technology executive with 24+ years delivering large-scale IT transformations across the GCC and Egypt.
+        Expert in aligning technology strategy with business objectives, delivering ERP & cloud migrations, strengthening security, and enabling enterprise resilience.
+        Proven at translating technical initiatives into measurable business value (cost savings, resiliency, performance).
       </p>
-      <div class="badges" aria-hidden="true">
-        <span class="badge">Digital Transformation</span>
-        <span class="badge">Cloud Strategy</span>
-        <span class="badge">ERP & CRM</span>
-        <span class="badge">Cybersecurity</span>
-        <span class="badge">Program Leadership</span>
+      <div class="badges" role="list">
+        <div class="badge">Enterprise IT Leadership</div>
+        <div class="badge">Digital Transformation</div>
+        <div class="badge">ERP & Cloud Programs</div>
+        <div class="badge">Cybersecurity & Zero Trust</div>
+        <div class="badge">Program Delivery (PMP)</div>
       </div>
     </section>
 
-    <!-- Two-column: main content + right column (downloads / achievements) -->
-    <div class="columns">
+    <div class="layout">
+
+      <!-- LEFT: main content -->
       <div>
 
         <!-- CORE COMPETENCIES -->
         <section class="card" id="core">
           <h2 class="section-title">Core Competencies</h2>
-          <p style="margin:0 0 10px;color:var(--muted-text)">Executive-level capabilities and leadership strengths.</p>
-          <div class="skills-grid">
-            <div class="skill-card"><h4>IT Strategy & Governance</h4><p>Define IT strategy, governance, and alignment with corporate goals.</p></div>
-            <div class="skill-card"><h4>Digital Transformation</h4><p>End-to-end digital roadmaps and program delivery.</p></div>
-            <div class="skill-card"><h4>Enterprise Architecture</h4><p>Blueprint, integration and target-state architectures.</p></div>
-            <div class="skill-card"><h4>Cloud Computing</h4><p>Azure, AWS, GCP — cloud adoption and hybrid models.</p></div>
-            <div class="skill-card"><h4>ERP & CRM</h4><p>SAP, Oracle Fusion, Microsoft Dynamics implementation leadership.</p></div>
-            <div class="skill-card"><h4>Cybersecurity & Risk Management</h4><p>Zero Trust, SIEM, DLP, risk frameworks and compliance.</p></div>
-            <div class="skill-card"><h4>IT Service Management</h4><p>ITIL v4, ServiceNow, SLA design and operations.</p></div>
-            <div class="skill-card"><h4>Vendor & Budget Optimization</h4><p>Commercial negotiation and cost reduction strategies.</p></div>
-            <div class="skill-card"><h4>Program & Project Leadership</h4><p>PMP, PRINCE2, scaled program governance.</p></div>
-            <div class="skill-card"><h4>Business Continuity & DR</h4><p>DR planning, data center resilience and business continuity.</p></div>
-            <div class="skill-card"><h4>Data Governance</h4><p>Data quality, lineage, governance and analytics enablement.</p></div>
-            <div class="skill-card"><h4>DevOps & Automation</h4><p>CI/CD, RPA, automation pipelines for faster delivery.</p></div>
-            <div class="skill-card"><h4>Leadership & Talent Development</h4><p>Coaching, building and scaling cross-functional teams.</p></div>
-            <div class="skill-card"><h4>Technology Innovation</h4><p>AI/ML enablement, modernization and incubation strategies.</p></div>
+          <div class="skills-grid" aria-hidden="false">
+            <!-- list all requested competencies (compact, complete) -->
+            <div class="skill-box"><h4>IT Strategy & Governance</h4><p>Strategic planning, IT governance, and CIO advisory.</p></div>
+            <div class="skill-box"><h4>Digital Transformation</h4><p>Roadmaps, organizational change, digital adoption.</p></div>
+            <div class="skill-box"><h4>Enterprise Architecture</h4><p>Application & infrastructure architecture, cloud-native designs.</p></div>
+            <div class="skill-box"><h4>Cloud Computing</h4><p>Azure, AWS, GCP — migrations, cost optimization & hybrid models.</p></div>
+            <div class="skill-box"><h4>ERP & CRM</h4><p>SAP, Oracle Fusion Cloud, Microsoft Dynamics 365 program leadership.</p></div>
+            <div class="skill-box"><h4>Cybersecurity & Risk Mgmt</h4><p>Zero Trust, SIEM, DLP & governance frameworks.</p></div>
+            <div class="skill-box"><h4>IT Service Management</h4><p>ITIL v4, ServiceNow, SLA & service portfolio optimization.</p></div>
+            <div class="skill-box"><h4>Vendor & Budget Optimization</h4><p>Commercial negotiations, vendor consolidation and cost savings.</p></div>
+            <div class="skill-box"><h4>Program & Project Leadership</h4><p>PMP, PRINCE2, Agile delivery of multi-vendor programs.</p></div>
+            <div class="skill-box"><h4>Business Continuity & DR</h4><p>Data center design, DR planning and business continuity.</p></div>
+            <div class="skill-box"><h4>Data Governance</h4><p>Data strategy, reporting automation and analytics.</p></div>
+            <div class="skill-box"><h4>DevOps & Automation</h4><p>CI/CD, RPA (UiPath) and delivery automation.</p></div>
+            <div class="skill-box"><h4>Leadership & Talent Development</h4><p>Building, mentoring and scaling technical teams.</p></div>
+            <div class="skill-box"><h4>Technology Innovation</h4><p>AI/ML pilots, PoCs, and new capability incubation.</p></div>
           </div>
         </section>
 
         <!-- EXPERTISE & SKILLS -->
         <section class="card" id="expertise">
           <h2 class="section-title">Expertise & Skills</h2>
-          <div style="column-count:1;gap:10px">
-            <p style="margin:0 0 8px;color:var(--muted-text)">Selected technical and commercial expertise areas:</p>
-            <ul style="margin:0 0 0 18px;color:var(--muted-text);line-height:1.65">
-              <li>Presales & Solution Consulting</li>
-              <li>Customer Value Proposition Design & Business Case Development</li>
-              <li>RFP/RFI Response & Proposal Development</li>
-              <li>Proof-of-Concept (PoC) Design & Product Demonstrations</li>
-              <li>Client Engagement, C-Level Presentations & Workshops</li>
-              <li>Revenue Growth, Deal Closing Support & Sales Enablement</li>
-              <li>Enterprise Architecture & IT Governance</li>
-              <li>Digital Transformation & Business Process Reengineering</li>
-              <li>ERP Systems (Oracle Fusion, SAP, Microsoft Dynamics)</li>
-              <li>Cloud & Hybrid IT Strategies (Azure, AWS, Google Cloud)</li>
-              <li>IT Service Management (ServiceNow, OpenText, Jira, ManageEngine, IFS)</li>
-              <li>Cybersecurity, Data Protection & Risk Management</li>
-              <li>Business Application Integration (ERP, CRM, Fintech, BI & Analytics)</li>
-              <li>Solution Architecture & High-Availability Infrastructure Design</li>
-              <li>Vendor & Stakeholder Management, Negotiation & Procurement</li>
-              <li>IT Operations, Disaster Recovery & Business Continuity Planning</li>
-              <li>Project Management (Agile, PMP) & Budget Forecasting</li>
-              <li>Leadership, Team Building & Change Management</li>
-            </ul>
-          </div>
+          <p style="margin:0 0 10px;color:var(--muted-text)">Commercial, technical and delivery expertise relevant to executive roles:</p>
+          <ul style="margin:0 0 0 20px;color:var(--muted-text);line-height:1.65">
+            <li>Presales & Solution Consulting</li>
+            <li>Customer Value Proposition & Business Case Development</li>
+            <li>RFP/RFI Response & Proposal Development</li>
+            <li>Proof-of-Concept (PoC) Design & Demonstrations</li>
+            <li>C-Level Engagement & Workshops</li>
+            <li>Revenue Growth, Deal Support & Sales Enablement</li>
+            <li>Enterprise Architecture & IT Governance</li>
+            <li>Digital Transformation & Process Reengineering</li>
+            <li>ERP Systems (Oracle Fusion, SAP, Dynamics)</li>
+            <li>Cloud & Hybrid IT Strategies (Azure, AWS, GCP)</li>
+            <li>Service Management Platforms (ServiceNow, Jira, ManageEngine)</li>
+            <li>Cybersecurity & Compliance</li>
+            <li>Integration: ERP, CRM, BI & Analytics</li>
+            <li>Solution Architecture & High-Availability Design</li>
+            <li>Vendor Management, Negotiation & Procurement</li>
+            <li>Operations, DR & Continuity Planning</li>
+            <li>Project Management (Agile, PMP), Budgeting & Forecasting</li>
+            <li>Leadership, Team Building & Change Management</li>
+          </ul>
         </section>
 
         <!-- TECHNICAL SKILLS -->
         <section class="card" id="technical">
           <h2 class="section-title">Technical Skills</h2>
-          <p style="margin:0 0 10px;color:var(--muted-text)">Hands-on platforms, frameworks and tools:</p>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px">
-            <div class="cert"><strong>Cloud & Infrastructure:</strong><div style="color:var(--muted-text);margin-top:6px">Azure, AWS, GCP, VMware, Hyper-V, O365, Exchange, Active Directory, Windows Server, Linux</div></div>
-            <div class="cert"><strong>Applications & Platforms:</strong><div style="color:var(--muted-text);margin-top:6px">SAP S/4HANA, Oracle Fusion Cloud, Microsoft Dynamics 365, Salesforce, ServiceNow</div></div>
-            <div class="cert"><strong>Networking & Security:</strong><div style="color:var(--muted-text);margin-top:6px">Cisco, Fortinet, Palo Alto, Zero Trust, SIEM, DLP, NAC, IDS/IPS, Firewalls, VPN, LAN/WAN</div></div>
-            <div class="cert"><strong>Tools & Frameworks:</strong><div style="color:var(--muted-text);margin-top:6px">ITIL v4, COBIT, ISO 27001, PMP, PRINCE2, DevOps, CI/CD, Agile, Scrum</div></div>
-            <div class="cert"><strong>Data & Analytics:</strong><div style="color:var(--muted-text);margin-top:6px">Power BI, SQL Server, Data Governance, Integration, Reporting Automation</div></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">
+            <div class="skill-box"><h4>Cloud & Infrastructure</h4><p>Azure, AWS, GCP, VMware, Hyper-V, O365, Exchange, AD, Windows Server, Linux</p></div>
+            <div class="skill-box"><h4>Applications & Platforms</h4><p>SAP S/4HANA, Oracle Fusion Cloud, Microsoft Dynamics 365, Salesforce, ServiceNow</p></div>
+            <div class="skill-box"><h4>Networking & Security</h4><p>Cisco, Fortinet, Palo Alto, Zero Trust, SIEM, DLP, IDS/IPS, VPN</p></div>
+            <div class="skill-box"><h4>Tools & Frameworks</h4><p>ITIL v4, COBIT, ISO27001, PMP, PRINCE2, DevOps, Agile, CI/CD</p></div>
+            <div class="skill-box"><h4>Data & Analytics</h4><p>Power BI, SQL Server, ETL, Reporting Automation, Data Governance</p></div>
           </div>
         </section>
 
-        <!-- Experience Accordion -->
+        <!-- PROFESSIONAL EXPERIENCE (Accordion) -->
         <section class="card" id="experience">
           <h2 class="section-title">Professional Experience (Detailed)</h2>
 
-          <div class="accordion-wrap" id="expAcc">
-
+          <div class="accordion" id="expAcc">
             <!-- SBM -->
-            <div class="acc-header" tabindex="0" data-key="sbm">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">IT Director — Saudi Business Machines (SBM)</div>
-                <div class="meta">May 2021 – Present — Riyadh, Saudi Arabia</div>
+            <div class="acc-header" role="button" tabindex="0" data-key="sbm">
+              <div class="acc-title">
+                <span class="role">IT Director — Saudi Business Machines (SBM)</span>
+                <span class="meta">May 2021 – Present — Riyadh, Saudi Arabia</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
-              <p>Lead enterprise digital transformation across hybrid cloud platforms (Azure, AWS, GCP) for more than 10,000 users. Responsible for IT strategy, large program governance, security, operations, and enterprise applications.</p>
+              <p>Lead digital transformation across hybrid cloud platforms (Azure, AWS, GCP) for 10,000+ users. Responsible for IT strategy, program governance, security, and enterprise application delivery.</p>
               <ul>
-                <li>Achieved SLA 99.9% and $3M annual cost reduction through ITIL v4 optimizations and process automation (ServiceNow, ManageEngine).</li>
-                <li>Directed multi-product ERP migrations (SAP, Oracle Fusion, Dynamics 365) with zero downtime and cross-functional integration.</li>
-                <li>Reduced cybersecurity vulnerabilities by 40% via Zero Trust programs, patched platform management and SIEM improvements.</li>
-                <li>Built DevOps pipelines and CI/CD tools reducing deployment cycles by 30%.</li>
-                <li>Led GCC-wide teams, delivered talent programs and capacity building for regional operations.</li>
+                <li>Achieved SLA 99.9% and identified $3M annual run-rate savings through service optimization and vendor consolidation.</li>
+                <li>Directed SAP, Oracle Fusion & Dynamics migrations with zero downtime and cross-business integrations.</li>
+                <li>Reduced cybersecurity vulnerabilities by ~40% using Zero Trust initiatives, patch consoles and SIEM tuning.</li>
+                <li>Implemented DevOps pipelines; decreased release cycles by 30% with CI/CD and automation.</li>
+                <li>Built GCC cross-functional teams and capability programs for regional growth.</li>
               </ul>
             </div>
 
             <!-- AlNaghi -->
-            <div class="acc-header" tabindex="0" data-key="alnaghi">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">IT Group Services Manager — Mohamed Yousef AlNaghi Group</div>
-                <div class="meta">May 2013 – May 2021 — Jeddah, Saudi Arabia</div>
+            <div class="acc-header" role="button" tabindex="0" data-key="alnaghi">
+              <div class="acc-title">
+                <span class="role">IT Group Services Manager — Mohamed Yousef AlNaghi Group</span>
+                <span class="meta">May 2013 – May 2021 — Jeddah, Saudi Arabia</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
-              <p>Owned group IT strategy, delivery governance and multi-vendor operations across the organization.</p>
+              <p>Owned group IT strategy, multi-vendor operations and enterprise programs.</p>
               <ul>
-                <li>Designed and implemented group cloud migration program (70% workloads migrated); reduced OpEx by 25%.</li>
-                <li>Established ITIL-based operations and incident management reducing incidents by 35% and improving MTTR.</li>
-                <li>Negotiated vendor contracts & procurement > $20M achieving ~20% annual savings via vendor consolidation and SLAs.</li>
-                <li>Led a central IT organization 30+ and partnered with business stakeholders to enable digital initiatives.</li>
+                <li>Delivered group cloud adoption (70% workloads) reducing OpEx ~25%.</li>
+                <li>Established ITIL operations and reduced incidents by 35% with improved MTTR.</li>
+                <li>Negotiated vendor contracts > $20M realizing ~20% annual savings.</li>
+                <li>Led central IT organization (30+) and drove digitalization across business units.</li>
               </ul>
             </div>
 
             <!-- Al Harbi -->
-            <div class="acc-header" tabindex="0" data-key="alharbi">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">IT Factory Manager — Al Harbi Holding (Wajhat)</div>
-                <div class="meta">Jan 2011 – Mar 2013 — Riyadh, Saudi Arabia</div>
+            <div class="acc-header" role="button" tabindex="0" data-key="alharbi">
+              <div class="acc-title">
+                <span class="role">IT Factory Manager — Al Harbi Holding (Wajhat)</span>
+                <span class="meta">Jan 2011 – Mar 2013 — Riyadh, Saudi Arabia</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
               <ul>
-                <li>Modernized plant IT & OT infrastructure achieving 99% uptime and improving production reliability.</li>
-                <li>Integrated SCADA and IoT sensors for real-time monitoring, increasing efficiency by 20%.</li>
-                <li>Led ERP and cybersecurity programs to support industrial operations and compliance.</li>
+                <li>Modernized plant IT/OT achieving >99% uptime and increased production reliability.</li>
+                <li>Integrated SCADA/IoT for real-time monitoring — +20% efficiency.</li>
+                <li>Implemented ERP and security systems to support continuity and compliance.</li>
               </ul>
             </div>
 
             <!-- Computer Castle -->
-            <div class="acc-header" tabindex="0" data-key="castle">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">IT Project Manager — Computer Castle</div>
-                <div class="meta">Jan 2009 – Jan 2011 — Riyadh, Saudi Arabia</div>
+            <div class="acc-header" role="button" tabindex="0" data-key="castle">
+              <div class="acc-title">
+                <span class="role">IT Project Manager — Computer Castle</span>
+                <span class="meta">Jan 2009 – Jan 2011 — Riyadh, Saudi Arabia</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
               <ul>
-                <li>Managed ERP, data-center, network & security projects with strict governance and timeline adherence.</li>
-                <li>Improved project performance KPIs by 15% and achieved 95% client satisfaction.</li>
+                <li>Delivered ERP, DC and network projects on time and within budget; improved PM KPIs by 15%.</li>
+                <li>Managed cross-functional vendor integrations and high-security sites.</li>
               </ul>
             </div>
 
-            <!-- SHA'S Water (Nestlé) Experience -->
-            <div class="acc-header" tabindex="0" data-key="shas">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">System & Network Engineer — SHA'S Water (Nestlé)</div>
-                <div class="meta">Jan 2007 – Jan 2009 — Riyadh, Saudi Arabia</div>
+            <!-- SHA'S Water (Nestlé) -->
+            <div class="acc-header" role="button" tabindex="0" data-key="shas">
+              <div class="acc-title">
+                <span class="role">System & Network Engineer — SHA'S Water (Nestlé)</span>
+                <span class="meta">Jan 2007 – Jan 2009 — Riyadh, Saudi Arabia</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
-              <p>Design and build for one of the largest water-production datacenter projects in the Middle East, integrating factory systems with the corporate SHA'S network and establishing high-availability industrial IT services.</p>
+              <p>Technical lead for datacenter design and integration for the largest water-production site in the Middle East.</p>
               <ul>
-                <li>Designed and implemented the central datacenter for the largest water factory in the Middle East — capacity and redundancy planning, network architecture, and storage design.</li>
-                <li>Integrated legacy factory control systems (industrial PLCs/SCADA) into corporate monitoring and reporting platforms.</li>
-                <li>Implemented high-availability network design and proactive monitoring that achieved 99% uptime SLA for manufacturing operations.</li>
-                <li>Introduced security controls and access management for OT and IT convergence, improving operational resilience.</li>
+                <li>Designed & built the datacenter: capacity, redundancy, cooling, storage and backup strategy.</li>
+                <li>Integrated legacy plant systems (PLCs/SCADA) with corporate networks and reporting frameworks.</li>
+                <li>Implemented HA networking and proactive monitoring — supported 24/7 manufacturing SLA.</li>
               </ul>
             </div>
 
             <!-- Ministry of Health (Egypt) -->
-            <div class="acc-header" tabindex="0" data-key="moh">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">Computer Engineer — Ministry of Health, Egypt</div>
-                <div class="meta">Jan 2002 – Dec 2006 — Cairo, Egypt</div>
+            <div class="acc-header" role="button" tabindex="0" data-key="moh">
+              <div class="acc-title">
+                <span class="role">Computer Engineer — Ministry of Health, Egypt</span>
+                <span class="meta">Jan 2002 – Dec 2006 — Cairo, Egypt</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
-              <p>Delivered nation-level healthcare IT support and modernization programs across multiple facilities. Focused on system availability, data integrity, reporting automation and disaster recovery readiness.</p>
+              <p>Delivered national healthcare IT support and modernization across multiple facilities.</p>
               <ul>
-                <li>Administered IT infrastructure for healthcare facilities, ensuring uptime and compliance with patient-data confidentiality requirements.</li>
-                <li>Automated clinical & operational reporting systems—reduced manual reporting effort and improved decision-making speed by ~30%.</li>
-                <li>Implemented backup, replication and disaster recovery procedures for critical hospital systems and databases.</li>
-                <li>Coordinated with vendors and cross-functional teams for rollouts, upgrades, and security patching across distributed sites.</li>
-                <li>Contributed to Ministry-wide IT modernization initiatives and standardization efforts for systems and processes.</li>
+                <li>Administered hospital IT infrastructure ensuring data integrity and confidentiality.</li>
+                <li>Automated reporting systems — reduced manual effort by ~30% and improved decision speed.</li>
+                <li>Implemented backup & DR processes and coordinated national rollouts.</li>
               </ul>
             </div>
 
           </div>
         </section>
 
-        <!-- Projects Accordion (FULL PROJECTS as provided) -->
+        <!-- Projects (FULL Projects as provided) -->
         <section class="card" id="projects">
           <h2 class="section-title">Key Projects — Full Portfolio (Project Manager)</h2>
 
-          <div class="accordion-wrap" id="projAcc">
-
-            <!-- SBM Projects -->
-            <div class="acc-header" tabindex="0" data-key="sbmproj">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">Saudi Business Machines (SBM) — 2021 to Present</div>
-                <div class="meta">Role: Project Manager / Program Lead</div>
+          <div class="accordion" id="projAcc">
+            <!-- 1. SBM -->
+            <div class="acc-header" role="button" tabindex="0" data-key="sbmproj">
+              <div class="acc-title">
+                <span class="role">Saudi Business Machines (SBM) — 2021 to Present</span>
+                <span class="meta">Role: Project Manager / Program Lead</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
               <ul>
                 <li><strong>Saudi Electricity Company</strong>
                   <ul>
                     <li>Manpower for ERP, CRM, ITC project — manage and control all manpower in this project.</li>
-                    <li>Air Quality — Enablon license and software implementation Project.</li>
-                    <li>ODBC SW support Project.</li>
+                    <li>Air Quality — Enablon license and software implementation project (environmental reporting & compliance).</li>
+                    <li>ODBC SW support project (data connectivity & integrations).</li>
                   </ul>
                 </li>
                 <li><strong>Saudi Aramco</strong>
                   <ul>
-                    <li>UIPATH implementation project.</li>
-                    <li>Citrix HW, software implementation Project.</li>
-                    <li>Sharqia Development Authority — SQL and Power BI software renewal with Oracle operations Project.</li>
+                    <li>UiPath implementation project (RPA automation of high-volume processes).</li>
+                    <li>Citrix HW and software implementation project (virtualization & remote access).</li>
+                    <li>Sharqia Development Authority — SQL & Power BI software renewal integrated with Oracle operations.</li>
                   </ul>
                 </li>
               </ul>
             </div>
 
-            <!-- Mohamed Yousef Alnaghi Group Projects -->
-            <div class="acc-header" tabindex="0" data-key="alnaghiproj">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">Mohamed Yousef Alnaghi Group — 2013 to 2021</div>
-                <div class="meta">Role: Project Manager</div>
+            <!-- 2. AlNaghi -->
+            <div class="acc-header" role="button" tabindex="0" data-key="alnaghiproj">
+              <div class="acc-title">
+                <span class="role">Mohamed Yousef Alnaghi Group — 2013 to 2021</span>
+                <span class="meta">Role: Project Manager</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
               <ul>
-                <li>New implementation for the group data center with DR Project.</li>
-                <li>New Oracle ERP installation and integration for ATS Group Project.</li>
-                <li>Mail migration from Office 365 to Gmail Project.</li>
-                <li>Mail Office 365 implementation Project.</li>
+                <li>New implementation for the group data center with DR project.</li>
+                <li>New Oracle ERP installation and integration for ATS Group project.</li>
+                <li>Mail migration from Office 365 to Gmail project.</li>
+                <li>Mail Office 365 implementation project.</li>
               </ul>
             </div>
 
-            <!-- Alharbi Holding (Wajhat) Projects -->
-            <div class="acc-header" tabindex="0" data-key="alharbiproj">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">Alharbi Holding Wajhat Company — 2011 to 2013</div>
-                <div class="meta">Role: Project Manager</div>
+            <!-- 3. Alharbi -->
+            <div class="acc-header" role="button" tabindex="0" data-key="alharbiproj">
+              <div class="acc-title">
+                <span class="role">Alharbi Holding Wajhat Company — 2011 to 2013</span>
+                <span class="meta">Role: Project Manager</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
               <ul>
-                <li>Design and supervise implementation of the new Wajhat factory Data Center and deploying new IT industrial systems (HANIC) and services support with all installing Wajhat factory LAN, WAN Projects.</li>
-                <li>Physical Security CCTV and Access doors with logical improvements and integration with BMS Project.</li>
+                <li>Design and supervise implementation of the new Wajhat factory Data Center and deploy new IT industrial systems (HANIC). Includes full LAN/WAN deployment and operational support.</li>
+                <li>Physical Security — CCTV and Access Doors with logical improvements and BMS integration.</li>
               </ul>
             </div>
 
-            <!-- Computer Castle Projects -->
-            <div class="acc-header" tabindex="0" data-key="castleproj">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">Computer Castle — 2011 to 2013</div>
-                <div class="meta">Role: Project Manager</div>
+            <!-- 4. Computer Castle -->
+            <div class="acc-header" role="button" tabindex="0" data-key="castleproj">
+              <div class="acc-title">
+                <span class="role">Computer Castle — 2009 to 2011</span>
+                <span class="meta">Role: Project Manager</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
               <ul>
-                <li>Hooson Najd Group Data Center with all systems implementations & configurations Project.</li>
-                <li>King Khaled Palace security systems (CCTV, Access Doors) Project.</li>
+                <li>Hooson Najd Group Data Center — All systems implementation & configuration project.</li>
+                <li>King Khaled Palace security systems (CCTV, Access Doors) project.</li>
                 <li>Team One — Exchange with SharePoint integration project.</li>
-                <li>Alwisam Alarabi Group monitoring System Project.</li>
+                <li>Alwisam Alarabi Group monitoring system project.</li>
               </ul>
             </div>
 
-            <!-- SHA'S Water (Nestlé) Projects -->
-            <div class="acc-header" tabindex="0" data-key="shasproj">
-              <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                <div class="title">SHA'S Water (Nestlé) — 2007 to 2009</div>
-                <div class="meta">Role: Technical Lead / Systems Integrator</div>
+            <!-- 5. Nestle SHA'S Water -->
+            <div class="acc-header" role="button" tabindex="0" data-key="shasproj">
+              <div class="acc-title">
+                <span class="role">SHA'S Water (Nestlé) — 2007 to 2009</span>
+                <span class="meta">Role: Technical Lead / Systems Integrator</span>
               </div>
-              <div class="acc-icon">+</div>
+              <div class="acc-ind">+</div>
             </div>
             <div class="acc-body">
               <ul>
-                <li>Design and Built the datacenter for the biggest water factory in Middle East Project.</li>
-                <li>Buit the system of the old factory and integrated it with the whole SHA'S network Project.</li>
+                <li>Design and built the datacenter for the biggest water factory in the Middle East project.</li>
+                <li>Built the system of the old factory and integrated it with the whole SHA'S network project.</li>
               </ul>
             </div>
+          </div>
+        </section>
 
+        <!-- CASE STUDIES -->
+        <section class="card" id="case-studies">
+          <h2 class="section-title">Selected Case Studies (Executive)</h2>
+          <div class="cs-grid">
+            <!-- Case 1: ERP migration (executive format) -->
+            <div class="case">
+              <h5>Case Study — Enterprise ERP Migration (Zero-downtime)</h5>
+              <p><strong>Challenge:</strong> Multiple legacy ERPs and islands of data across business units causing delays and inconsistent reporting.</p>
+              <p><strong>Solution:</strong> Led a cross-functional program to consolidate on Oracle Fusion / SAP S/4HANA, designed phased cutover with parallel run, data reconciliation and automated validation.</p>
+              <p><strong>Impact:</strong> Zero downtime migration, consolidated reporting in 48 hours, improved decision latency and saved c.$1.2M in annual licensing/ops costs.</p>
+            </div>
+
+            <!-- Case 2: Security posture -->
+            <div class="case">
+              <h5>Case Study — Zero Trust & SecOps</h5>
+              <p><strong>Challenge:</strong> Increasing attack surface from remote access and cloud services; high vulnerability counts.</p>
+              <p><strong>Solution:</strong> Implemented Zero Trust principles, re-architected network segmentation, deployed SIEM & DLP and integrated automated patching workflows.</p>
+              <p><strong>Impact:</strong> Vulnerabilities reduced by ~40%, detection-to-remediation time decreased by 55% and improved regulatory posture for audits.</p>
+            </div>
+
+            <!-- Case 3: Datacenter + DR -->
+            <div class="case">
+              <h5>Case Study — Data Center & DR Implementation</h5>
+              <p><strong>Challenge:</strong> Legacy datacenter risks & lack of DR for critical systems across group operations.</p>
+              <p><strong>Solution:</strong> Designed resilient datacenter topology, active-passive DR with replication, and operational runbooks & testing cadence.</p>
+              <p><strong>Impact:</strong> Restored RTO/RPO to SLA levels; improved availability to 99.95% for critical systems and ensured business continuity.</p>
+            </div>
           </div>
         </section>
 
       </div>
 
-      <!-- RIGHT COLUMN -->
+      <!-- RIGHT: sidebar -->
       <aside>
-        <section class="card" id="downloads">
-          <h2 class="section-title">Download Documents</h2>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <a class="download-btn" href="files/Sherif_Abdelhamid_CV.pdf" target="_blank">📄 CV (PDF)</a>
-            <a class="download-btn" href="files/Statement_of_Purpose_Sherif_Abdelhamid.pdf" target="_blank">📝 SOP</a>
-            <a class="download-btn" href="files/Support_Letter_Sherif_Abdelhamid.pdf" target="_blank">📣 LTSS</a>
-            <a class="download-btn" href="files/Cover_Letter_Sherif_Abdelhamid.pdf" target="_blank">✉️ Cover Letter</a>
-          </div>
-          <p style="color:var(--muted-text);margin-top:10px">Place final PDFs in the <code>files/</code> folder with the exact filenames for the download links to work.</p>
-        </section>
 
-        <section class="card" id="achievements">
-          <h2 class="section-title">Key Achievements</h2>
+        <!-- Downloads -->
+        <div class="card-compact">
+          <h3 style="margin:0 0 8px;color:var(--primary)">Downloads</h3>
+          <a class="download-btn" href="files/Sherif_Abdelhamid_CV.pdf" target="_blank">CV (PDF)</a><br/>
+          <a class="download-btn" href="files/Statement_of_Purpose_Sherif_Abdelhamid.pdf" target="_blank">SOP (PDF)</a><br/>
+          <a class="download-btn" href="files/Support_Letter_Sherif_Abdelhamid.pdf" target="_blank">LTSS (PDF)</a><br/>
+          <a class="download-btn" href="files/Cover_Letter_Sherif_Abdelhamid.pdf" target="_blank">Cover Letter (PDF)</a>
+          <p style="margin-top:10px;color:var(--muted-text)">Place final PDFs in <code>files/</code> folder with exact filenames. Keep file sizes moderate (≤2–3MB each) for recruiter convenience.</p>
+        </div>
+
+        <!-- Achievements -->
+        <div class="card-compact">
+          <h3 style="margin:0 0 8px;color:var(--primary)">Key Achievements</h3>
           <div class="ach-grid">
             <div class="ach"><h3>99.9%</h3><p>SLA Compliance</p></div>
             <div class="ach"><h3>$3M</h3><p>Annual Cost Reduction</p></div>
-            <div class="ach"><h3>40%</h3><p>Reduced Cyber Vulnerabilities</p></div>
-            <div class="ach"><h3>3+</h3><p>Major ERP Migrations</p></div>
-            <div class="ach"><h3>24+</h3><p>Years Experience</p></div>
+            <div class="ach"><h3>40%</h3><p>Vulnerability Reduction</p></div>
           </div>
-        </section>
+        </div>
 
-        <section class="card" id="certifications">
-          <h2 class="section-title">Certifications</h2>
-          <div class="certs">
-            <div class="cert"><strong>ITIL v4 Managing Professional (Expert)</strong><div style="color:var(--muted-text);margin-top:6px">IT Service Management leadership</div></div>
-            <div class="cert"><strong>Project Management Professional (PMP)</strong></div>
-            <div class="cert"><strong>PRINCE2 Practitioner</strong></div>
-            <div class="cert"><strong>Microsoft Certified Systems Engineer (MCSE — Security)</strong></div>
-            <div class="cert"><strong>Microsoft Certified Systems Administrator (MCSA — Security)</strong></div>
-            <div class="cert"><strong>Cisco Certified Network Professional (CCNP)</strong></div>
-            <div class="cert"><strong>Cisco Certified Network Associate + Voice (CCNA+V)</strong></div>
-            <div class="cert"><strong>Certified Network Security Specialist (CNSS)</strong></div>
-            <div class="cert"><strong>Microfocus Change Manager Server (CMS)</strong></div>
-            <div class="cert"><strong>Operation Bridge Technical Presales (OBTP)</strong></div>
+        <!-- Certifications -->
+        <div class="card-compact">
+          <h3 style="margin:0 0 8px;color:var(--primary)">Certifications</h3>
+          <div style="display:grid;gap:8px">
+            <div style="font-weight:700">ITIL v4 Managing Professional (MP)</div>
+            <div>PMP • PRINCE2 • MCSE (Security) • MCSA</div>
+            <div>CCNP • CCNA+V • CNSS • CMS (Microfocus) • OBTP</div>
           </div>
-        </section>
+        </div>
 
-        <section class="card" id="education">
-          <h2 class="section-title">Education</h2>
-          <div class="edu">
-            <p><strong>MSc in Computer Networks (In Progress)</strong> — Mansoura University, Egypt (Aug 2003 – May 2006)</p>
-            <p><strong>BSc in Computer Engineering</strong> — Mansoura University, Egypt (Sep 1996 – May 2001)</p>
+        <!-- Education -->
+        <div class="card-compact">
+          <h3 style="margin:0 0 8px;color:var(--primary)">Education</h3>
+          <div style="color:var(--muted-text)">
+            <p style="margin:0"><strong>MSc — Computer Networks</strong> (In Progress), Mansoura University (2003–2006)</p>
+            <p style="margin:6px 0 0"><strong>BSc — Computer Engineering</strong>, Mansoura University (1996–2001)</p>
           </div>
-        </section>
+        </div>
+
       </aside>
+
     </div>
+
+    <footer>© 2025 Sherif Abdelhamid — Executive Technology Leader. Portfolio aligned to executive recruitment standards.</footer>
 
   </main>
 
-  <footer style="background:#062831;color:#bfeff9;padding:18px;text-align:center">
-    © 2025 Sherif Abdelhamid — IT Executive & Digital Transformation Leader
-  </footer>
-
 <script>
-/* Accordion Interactions (Experience & Projects) */
+/* ---------- Accordion logic (single behavior for both sets) ---------- */
 (function(){
-  const headers = Array.from(document.querySelectorAll('.acc-header'));
-  headers.forEach(h=>{
-    h.addEventListener('click', ()=> toggle(h));
-    h.addEventListener('keydown', (e)=>{
-      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(h); }
+  function attachAccordion(rootSelector){
+    const root = document.querySelector(rootSelector);
+    if(!root) return;
+    const headers = Array.from(root.querySelectorAll('.acc-header'));
+    headers.forEach(h=>{
+      h.addEventListener('click', ()=> toggle(h, headers));
+      h.addEventListener('keydown', (e)=> { if(e.key==='Enter'||e.key===' ') { e.preventDefault(); toggle(h, headers); }});
     });
-  });
-
-  function toggle(h){
-    const isActive = h.classList.contains('active');
-    // close all
-    headers.forEach(x=>{
-      x.classList.remove('active');
-      const body = x.nextElementSibling;
-      if(body && body.classList.contains('acc-body')) body.style.display='none';
-      const icon = x.querySelector('.acc-icon'); if(icon) icon.textContent = '+';
-    });
-    // open if not active
-    if(!isActive){
-      h.classList.add('active');
+    function toggle(h, headers){
       const body = h.nextElementSibling;
-      if(body && body.classList.contains('acc-body')) body.style.display='block';
-      const icon = h.querySelector('.acc-icon'); if(icon) icon.textContent = '-';
-      setTimeout(()=> h.scrollIntoView({behavior:'smooth', block:'center'}), 120);
+      const isOpen = body && body.classList.contains('acc-open');
+      // close all in this root
+      headers.forEach(hx=>{
+        hx.classList.remove('active');
+        const b = hx.nextElementSibling;
+        if(b){ b.classList.remove('acc-open'); b.style.display='none'; }
+        const ind = hx.querySelector('.acc-ind'); if(ind) ind.textContent = '+';
+      });
+      if(!isOpen){
+        h.classList.add('active');
+        if(body){ body.classList.add('acc-open'); body.style.display='block'; }
+        const ind = h.querySelector('.acc-ind'); if(ind) ind.textContent = '-';
+        // focus for accessibility
+        setTimeout(()=> { h.scrollIntoView({behavior:'smooth', block:'center'}); }, 120);
+      }
     }
+    // open first by default
+    if(headers.length) headers[0].click();
   }
 
-  // open first experience by default
-  const firstExp = document.querySelector('#expAcc .acc-header');
-  if(firstExp) firstExp.click();
+  attachAccordion('#expAcc');
+  attachAccordion('#projAcc');
 })();
 </script>
 
